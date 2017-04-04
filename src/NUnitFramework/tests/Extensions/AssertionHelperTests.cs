@@ -3,7 +3,7 @@ using System.IO;
 using NUnit.Framework.Constraints;
 using NUnit.TestUtilities.Comparers;
 
-namespace NUnit.Framework.Syntax
+namespace NUnit.Framework.Extensions
 {
     class AssertionHelperTests : AssertionHelper
     {

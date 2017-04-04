@@ -83,7 +83,6 @@
     <Compile Include="Assert.Types.cs">
       <DependentUpon>Assert.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssertionHelper.cs" />
     <Compile Include="Assume.cs" />
     <Compile Include="Attributes\ApartmentAttribute.cs" />
     <Compile Include="Attributes\AuthorAttribute.cs" />
@@ -165,7 +164,6 @@
     <Compile Include="Constraints\Constraint.cs" />
     <Compile Include="Constraints\ConstraintBuilder.cs" />
     <Compile Include="Constraints\ConstraintExpression.cs" />
-    <Compile Include="Constraints\ConstraintFactory.cs" />
     <Compile Include="Constraints\ConstraintResult.cs" />
     <Compile Include="Constraints\ContainsConstraint.cs" />
     <Compile Include="Constraints\DelayedConstraint.cs" />
@@ -254,6 +252,8 @@
     <Compile Include="Exceptions\MultipleAssertException.cs" />
     <Compile Include="Exceptions\ResultStateException.cs" />
     <Compile Include="Exceptions\SuccessException.cs" />
+    <Compile Include="Extensions\AssertionHelper.cs" />
+    <Compile Include="Extensions\ConstraintFactory.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Interfaces\AssertionResult.cs" />
     <Compile Include="Interfaces\AssertionStatus.cs" />

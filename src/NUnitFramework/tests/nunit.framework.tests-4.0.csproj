@@ -77,7 +77,6 @@
     <Compile Include="Assertions\AssertFailTests.cs" />
     <Compile Include="Assertions\AssertIgnoreTests.cs" />
     <Compile Include="Assertions\AssertInconclusiveTests.cs" />
-    <Compile Include="Assertions\AssertionHelperTests.cs" />
     <Compile Include="Assertions\AssertMultipleTests.cs" />
     <Compile Include="Assertions\AssertPassTests.cs" />
     <Compile Include="Assertions\AssertPolarityTests.cs" />
@@ -137,6 +136,7 @@
     <Compile Include="Attributes\TestDummy.cs" />
     <Compile Include="Attributes\TestExpectedResult.cs" />
     <Compile Include="Attributes\TestOrderAttributeTests.cs" />
+    <Compile Include="Extensions\AssertionHelperTests.cs" />
     <Compile Include="Internal\AssemblyHelperTests.cs" />
     <Compile Include="Internal\Filters\MockTestFilter.cs" />
     <Compile Include="Internal\Results\AssertionResultTests.cs" />

@@ -23,8 +23,9 @@
 
 using System;
 using System.Collections;
+using NUnit.Framework.Constraints;
 
-namespace NUnit.Framework.Constraints
+namespace NUnit.Framework.Extensions
 {
     /// <summary>
     /// Helper class with properties and methods that supply

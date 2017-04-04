@@ -24,7 +24,7 @@
 using System.Collections;
 using NUnit.Framework.Constraints;
 
-namespace NUnit.Framework
+namespace NUnit.Framework.Extensions
 {
     /// <summary>
     /// AssertionHelper is an optional base class for user tests,

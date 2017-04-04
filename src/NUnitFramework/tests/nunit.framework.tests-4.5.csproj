@@ -79,7 +79,6 @@
     <Compile Include="Assertions\AssertFailTests.cs" />
     <Compile Include="Assertions\AssertIgnoreTests.cs" />
     <Compile Include="Assertions\AssertInconclusiveTests.cs" />
-    <Compile Include="Assertions\AssertionHelperTests.cs" />
     <Compile Include="Assertions\AssertMultipleTests.cs" />
     <Compile Include="Assertions\AssertPassTests.cs" />
     <Compile Include="Assertions\AssertThatTests.cs" />
@@ -205,6 +204,7 @@
     <Compile Include="Constraints\ToStringTests.cs" />
     <Compile Include="Constraints\UniqueItemsConstraintTests.cs" />
     <Compile Include="Constraints\XmlSerializableTest.cs" />
+    <Compile Include="Extensions\AssertionHelperTests.cs" />
     <Compile Include="Internal\AssemblyHelperTests.cs" />
     <Compile Include="Internal\AsyncSetupTeardownTests.cs" />
     <Compile Include="Internal\AsyncTestMethodTests.cs" />
@@ -347,4 +347,5 @@
     </Content>
     <None Include="nunit.framework.tests-4.5.project.json" />
   </ItemGroup>
+  <ItemGroup />
 </Project>
