@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework.Constraints;
-using NUnit.TestUtilities.Comparers;
 
 namespace NUnit.Framework.Extensions
 {
@@ -376,7 +377,7 @@ namespace NUnit.Framework.Extensions
         {
             var constraint = Ordered.Using(ObjectComparer.Default);
             Expect(constraint, TypeOf<CollectionOrderedConstraint>());
-            Expect(constraint.ToString(), EqualTo("<ordered NUnit.TestUtilities.Comparers.ObjectComparer>"));
+            Expect(constraint.ToString(), EqualTo("<ordered NUnit.Framework.Extensions.AssertionHelperTests+ObjectComparer>"));
         }
 
         [Test]
@@ -384,7 +385,7 @@ namespace NUnit.Framework.Extensions
         {
             var constraint = Ordered.Using(ObjectComparer.Default).Descending;
             Expect(constraint, TypeOf<CollectionOrderedConstraint>());
-            Expect(constraint.ToString(), EqualTo("<ordered descending NUnit.TestUtilities.Comparers.ObjectComparer>"));
+            Expect(constraint.ToString(), EqualTo("<ordered descending NUnit.Framework.Extensions.AssertionHelperTests+ObjectComparer>"));
         }
 
         #endregion
@@ -412,7 +413,7 @@ namespace NUnit.Framework.Extensions
         {
             var constraint = Ordered.By("SomePropertyName").Using(ObjectComparer.Default);
             Expect(constraint, TypeOf<CollectionOrderedConstraint>());
-            Expect(constraint.ToString(), EqualTo("<orderedby SomePropertyName NUnit.TestUtilities.Comparers.ObjectComparer>"));
+            Expect(constraint.ToString(), EqualTo("<orderedby SomePropertyName NUnit.Framework.Extensions.AssertionHelperTests+ObjectComparer>"));
         }
 
         [Test]
@@ -420,7 +421,7 @@ namespace NUnit.Framework.Extensions
         {
             var constraint = Ordered.By("SomePropertyName").Using(ObjectComparer.Default).Descending;
             Expect(constraint, TypeOf<CollectionOrderedConstraint>());
-            Expect(constraint.ToString(), EqualTo("<orderedby SomePropertyName descending NUnit.TestUtilities.Comparers.ObjectComparer>"));
+            Expect(constraint.ToString(), EqualTo("<orderedby SomePropertyName descending NUnit.Framework.Extensions.AssertionHelperTests+ObjectComparer>"));
         }
 
         #endregion
@@ -934,6 +935,26 @@ namespace NUnit.Framework.Extensions
             return ((IResolveConstraint)expression).Resolve();
         }
 
-#endregion
+        #endregion
+
+        #region Nested ObjectComparer Class
+
+        public class ObjectComparer : IComparer
+        {
+            public bool WasCalled = false;
+            public static readonly IComparer Default = new ObjectComparer();
+
+            int IComparer.Compare(object x, object y)
+            {
+                WasCalled = true;
+#if PORTABLE || NETSTANDARD1_6
+            return Comparer<object>.Default.Compare(x, y);
+#else
+                return Comparer.Default.Compare(x, y);
+#endif
+            }
+        }
+
+        #endregion
     }
 }

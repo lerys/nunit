@@ -121,8 +121,6 @@
       <DependentUpon>Assert.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\MultipleAssertException.cs" />
-    <Compile Include="Extensions\AssertionHelper.cs" />
-    <Compile Include="Extensions\ConstraintFactory.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Interfaces\AssertionResult.cs" />
     <Compile Include="Interfaces\AssertionStatus.cs" />
